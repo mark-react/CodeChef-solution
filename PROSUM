@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios_base :: sync_with_stdio(false);
+	cin.tie(NULL);
+
+	short int t;
+	cin >> t;
+
+	while (t --)
+	{
+		long long int n, x, val = (-1), two = 0;
+		cin >> n;
+
+		long long int sum = 0;
+		while (n --)
+		{
+			cin >> x;
+
+			if ((x == 0) || (x == 1))
+			{
+				continue;
+			}
+			else if (x == 2)
+			{
+				two ++;
+			}
+
+			val ++;
+			sum += val;
+		}
+
+		two = ((two == 1) ? 0 : two);
+		two = (((two - 1) * (two)) / 2);
+		sum = sum - two;
+		cout << sum << "\n";
+	}
+	return 0;
+}
